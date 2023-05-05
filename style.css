@@ -1,0 +1,41 @@
+body{
+    font-family: Arial font;
+ 
+
+
+
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+  }
+  
+  .box div {
+    width: 100px;
+    height: 100px;
+  }
+
+  .header{
+    font-weight: bolder;
+  }
+  
+
+.btn-primary-color{
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 5px 15px;
+}
+
+.btn-primary-color:hover{
+    background-color: #0056B3;
+    color: #ffffff;
+}
+
+.item{
+    margin: 10px;
+}
