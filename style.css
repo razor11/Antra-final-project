@@ -1,6 +1,6 @@
-body{
-    font-family: Arial font;
- 
+body {
+  font-family: Arial font;
+
 
 
 
@@ -8,34 +8,41 @@ body{
 
 
 .container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    height: 80vh;
-  }
-  
-  .box div {
-    width: 100px;
-    height: 100px;
-  }
-
-  .header{
-    font-weight: bolder;
-  }
-  
-
-.btn-primary-color{
-    background-color: #007BFF;
-    color: #ffffff;
-    padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 80vh;
 }
 
-.btn-primary-color:hover{
-    background-color: #0056B3;
-    color: #ffffff;
+.box div {
+  width: 100px;
+  height: 100px;
 }
 
-.item{
-    margin: 10px;
+.header {
+  font-weight: bolder;
+}
+
+
+.btn-primary-color {
+  background-color: #007BFF;
+  color: #ffffff;
+  padding: 10px 30px;
+  text-align: center;
+  border-radius: 5px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btn-primary-color:hover {
+  background-color: #0056B3;
+  color: #ffffff;
+}
+
+.item {
+  margin: 10px;
 }

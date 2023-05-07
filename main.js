@@ -58,7 +58,16 @@ const Model = ((View) => {
             this._word = '';
             this._guessedLetters = [];
             this._attempts = 0;
-            this._maxAttempts = 10;
+            this._maxAttempts = 0;
+        }
+
+
+        reset() {
+            this._word = '';
+            this._guessedLetters = [];
+            this._attempts = 0;
+            this._maxAttempts = 0;
+
         }
 
         get getGuessWord() {
@@ -88,11 +97,15 @@ const Model = ((View) => {
 
         set displayWord(newWord) {
             this._word = newWord;
+            this._maxAttempts = this._word.length;
             console.log(this._word)
+
             let guessWord = this.wordDisplay();
             let attempts = this._attempts;
+            let maxAttempts = this._maxAttempts;
 
-            Render(guessWord, attempts, this._maxAttempts);
+
+            Render(guessWord, attempts, maxAttempts);
 
         }
 
@@ -150,6 +163,8 @@ const Controller = ((View, Model, Api) => {
         })
     }
 
+
+
     const newGame = () => {
         const newbtn = document.querySelector(domSelector.guessBtn);
         newbtn.addEventListener('click', () => {
@@ -181,8 +196,18 @@ const Controller = ((View, Model, Api) => {
         }
 
         if (state.attempts === state.maxAttempts) {
-            alert('wrong guesses equal max allowed chances')
+            alert('wrong guesses equal max allowed chances');
+            location.reload();
 
+
+        }
+
+        else if (isWordGuessed()) {
+            alert('Congratulations');
+            location.reload();
+        }
+        else {
+            Render(state.wordDisplay(), state.attempts, state.maxAttempts);
         }
 
 
@@ -190,12 +215,13 @@ const Controller = ((View, Model, Api) => {
 
 
     }
-    const isWordGuess = () => {
-        const word = document.querySelector(domSelector.word);
-        if (word.value === state.word) {
-            return true;
+    const isWordGuessed = () => {
+        for (const letter of state.getGuessWord) {
+            if (!state.guessLetters.includes(letter)) {
+                return false;
+            }
         }
-        return false
+        return true;
     }
 
 
