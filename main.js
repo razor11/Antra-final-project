@@ -207,7 +207,7 @@ const Controller = ((View, Model, Api) => {
             location.reload();
         }
         else {
-            Render(state.wordDisplay(), state.attempts, state.maxAttempts);
+            console.log('test')
         }
 
 
